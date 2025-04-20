@@ -152,7 +152,7 @@ class EventsCog(commands.Cog):
     @commands.Cog.listener()
     async def on_guild_join(self, guild):
         try:
-            channel = self.bot.get_channel(1257988420144201810)
+            channel = self.bot.get_channel(1363337979103412427)
             e = discord.Embed(color=0x00fb15)
             e.title = "✅ Bot Added ✅"
             e.description = f"**Quake** has been added! \n<:ChainReply:1259287285845725214> **Guild:** {guild.name} \n<:Reply:1259287286814740541> **ID:** {guild.id}"
@@ -199,7 +199,7 @@ class EventsCog(commands.Cog):
     @commands.Cog.listener()
     async def on_guild_remove(self, guild):
         try:
-            channel = self.bot.get_channel(1257988420144201810)
+            channel = self.bot.get_channel(1363337979103412427)
             e = discord.Embed(color=0xFf0000)
             e.title = "❌ Bot Removed ❌"
             e.description = f"**Quake** has been removed! \n<:ChainReply:1259287285845725214> **Guild:** {guild.name} \n<:Reply:1259287286814740541> **ID:** {guild.id}"
