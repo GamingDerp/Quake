@@ -130,10 +130,10 @@ class SupportServerCog(commands.Cog):
             print(e)
 
     @commands.Cog.listener()
-    async def on_member_join(self, ctx):
+    async def on_member_join(self, member, ctx):
         try:
-            member_role = discord.utils.get(interaction.guild.roles, name="💮 Member")
-            await ctx.member.add_roles(member_role)
+            member_role = discord.utils.get(member.guild.roles, name="💮 Member")
+            await member.add_roles(member_role)
         except Exception as e:
             print(e)
 
