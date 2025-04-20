@@ -4,8 +4,8 @@ from discord.ext import commands
 import asyncio
 import re
 
-commie_logo = "https://media.discordapp.net/attachments/1257979868784758854/1258026914816331807/CommieLogo.png?ex=66868c5d&is=66853add&hm=36c6a57e62eca6ec2954f76efc6d20add7ea2ab786380aab1f1994e55513ef05&=&format=webp&quality=lossless"
-commie_color = 0xd40001
+quake_logo = "https://media.discordapp.net/attachments/1363337978742833409/1363342899474862233/QuakeLogo.png?ex=6805af84&is=68045e04&hm=d65ade377e31ed97126ff99ac7b7e693f63ead68d24e12903fcf7f1ad7905af0&=&format=webp&quality=lossless"
+quake_color = 0x3fb7f0
 
 color_mapping = {
     "red": 0xd40001,
@@ -250,9 +250,9 @@ class RoleCog(commands.Cog):
         def check(m):
             return m.author == ctx.author and m.channel == ctx.channel
         try:
-            e = discord.Embed(color=commie_color)
-            e.set_author(name="Commie Self Role Menu Color Choices", icon_url=commie_logo)
-            e.set_thumbnail(url=commie_logo)
+            e = discord.Embed(color=quake_color)
+            e.set_author(name="Quake Self Role Menu Color Choices", icon_url=quake_logo)
+            e.set_thumbnail(url=quake_logo)
             e.description = (
                 "# 🛍️ Available Color Choices 🛍️\n"
                 "> 🔴 Red\n"
@@ -277,7 +277,7 @@ class RoleCog(commands.Cog):
             elif color in color_mapping:
                 color_value = color_mapping[color]
             else:
-                color_value = commie_color
+                color_value = quake_color
             await msg.delete()
             embed = discord.Embed(title="Placeholder", description="Placeholder", color=color_value)
             message = await ctx.send(embed=embed)
@@ -445,8 +445,8 @@ class RoleCog(commands.Cog):
             if menu['guild_id'] != ctx.guild.id:
                 await ctx.send(f"This menu does not belong to **{ctx.guild.name}**!", ephemeral=True)
                 return
-            e = discord.Embed(color=commie_color)
-            e.title = "⚙️ Commie Menu Editor ⚙️"
+            e = discord.Embed(color=quake_color)
+            e.title = "⚙️ Quake Menu Editor ⚙️"
             e.set_thumbnail(url=ctx.guild.icon.url)
             e.description = (
                 "***Choose your editing option!***\n\n"
@@ -524,7 +524,7 @@ class RoleCog(commands.Cog):
                 elif color in color_mapping:
                     color_value = color_mapping[color]
                 else:
-                    color_value = commie_color
+                    color_value = quake_color
                 menu["color"] = color_value
                 await self.save_menu(menu_id, menu["message_id"], menu["guild_id"], menu["selection_format"], menu["title"], menu["description"], color_value, menu["include_role_name"], menu["roles"])
                 await msg.delete()
@@ -588,7 +588,7 @@ class RoleCog(commands.Cog):
                 if choice not in ["add", "remove", "edit"]:
                     await interaction.followup.send("Invalid option. Please choose **add**, **remove**, or **edit**.", ephemeral=True)
                     return
-                roles_embed = discord.Embed(title="⚙️ Commie Menu Editor ⚙️", color=discord.Color(menu["color"]))
+                roles_embed = discord.Embed(title="⚙️ Quake Menu Editor ⚙️", color=discord.Color(menu["color"]))
                 roles_embed.description = "\n".join([f"{role_data['emoji']} <@&{role_id}>: {role_data['description']}" if role_data['description'] else f"{role_data['emoji']} <@&{role_id}>" for role_id, role_data in menu["roles"].items()])
                 options = [discord.SelectOption(label=interaction.guild.get_role(int(role_id)).name, value=str(role_id), emoji=role_data["emoji"]) for role_id, role_data in menu["roles"].items()]
                 select = discord.ui.Select(placeholder="Choose the role to edit", options=options)
@@ -705,7 +705,7 @@ class RoleCog(commands.Cog):
             if not menu:
                 await interaction.response.send_message("Menu not found!", ephemeral=True)
                 return
-            roles_embed = discord.Embed(title="⚙️ Commie Menu Editor ⚙️", color=discord.Color(menu["color"]))
+            roles_embed = discord.Embed(title="⚙️ Quake Menu Editor ⚙️", color=discord.Color(menu["color"]))
             roles_embed.description = "\n".join([
                 f"{role_data['emoji']} <@&{role_id}>"
                 for role_id, role_data in menu["roles"].items()
@@ -759,9 +759,9 @@ class RoleCog(commands.Cog):
             await interaction.followup.send("An error occurred while changing the emoji.", ephemeral=True)
 
     async def send_color_embed(self, interaction):
-        e = discord.Embed(color=commie_color)
-        e.set_author(name="Commie Self Role Menu Color Choices", icon_url=commie_logo)
-        e.set_thumbnail(url=commie_logo)
+        e = discord.Embed(color=quake_color)
+        e.set_author(name="Quake Self Role Menu Color Choices", icon_url=quake_logo)
+        e.set_thumbnail(url=quake_logo)
         e.description = "# 🛍️ Available Color Choices 🛍️ \n> 🔴 Red \n> 🟠 Orange \n> 🟡 Yellow \n> 🟢 Green \n> 🔵 Blue \n> 🟣 Purple \n> 🌸 Pink \n> 🟤 Brown \n> ⚫️ Black \n> 🔘 Grey \n> ⚪️ White\n\n### 👾 Custom Colors 👾 \n> To set a custom color use a hex code (**Ex:** `#ff5733`)!"
         await interaction.response.send_message(embed=e, ephemeral=True)
 
@@ -826,7 +826,7 @@ class RoleCog(commands.Cog):
             if not ctx.author.guild_permissions.administrator and not await self.has_admin_role(ctx.author, ctx.guild.id):
                 await ctx.send("You don't have the required permissions for this command!", ephemeral=True, delete_after=10)
                 return
-            e = discord.Embed(title="⚙️ Menu Help ⚙️", color=commie_color)
+            e = discord.Embed(title="⚙️ Menu Help ⚙️", color=quake_color)
             e.description="Here are the available public commands for managing self role menus. \n### 📌 Menu Commands 📌\n> ⚙️ `/menu help` **|** Shows the Menu Help Menu\n> 📌 `/menu info [identifier]` **|** Shows information about a self role menu [`identifier` can be either the **Menu ID** or the **Message ID**]\n> 🧮 `/menu create` **|** Creates a self role menu\n> 🛠 `/menu edit [menu_id]` **|** Edits a self role menu\n> 📇 `/menu send [menu_id]` **|** Sends a self role menu"
             await ctx.send(embed=e, ephemeral=True)
         except Exception as e:
