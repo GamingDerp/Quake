@@ -253,8 +253,8 @@ class GeneralCog(commands.Cog):
         e.set_thumbnail(url=quake_logo)
         e.description = "Thank you for wanting to vote for **Quake**! It's very appreciated! \n\n*Voting sites are linked below!*"
         view = discord.ui.View()
-        view.add_item(discord.ui.Button(style=discord.ButtonStyle.link, emoji="<:TopGG:1363355144187543572>", label="Top.GG", url=""))
-        view.add_item(discord.ui.Button(style=discord.ButtonStyle.link, emoji="<:DiscordBotList:1363355150227341403>", label="DiscordBotList", url=""))
+        view.add_item(discord.ui.Button(style=discord.ButtonStyle.link, emoji="<:TopGG:1363355144187543572>", label="Top.GG", url="https://top.gg/bot/1363337899046867036"))
+        view.add_item(discord.ui.Button(style=discord.ButtonStyle.link, emoji="<:DiscordBotList:1363355150227341403>", label="Discord Bot List", url="https://discordbotlist.com/bots/quake-2260"))
         await ctx.send(embed=e, view=view, ephemeral=True)
 
     @commands.hybrid_command(description="Sends Quake's ping")
