@@ -348,7 +348,7 @@ class GeneralCog(commands.Cog):
             e = discord.Embed(color=quake_color)
             e.set_author(name="Quake Links", icon_url=quake_logo)
             e.set_thumbnail(url=quake_logo)
-            e.description = f"> :link: [Add Quake](<https://discord.com/oauth2/authorize?client_id=1363337899046867036&permissions=1632493759575&integration_type=0&scope=bot>)\n> <:Discord:1363355151234105405> [Support Server](https://discord.gg/t9g3Wbt9Sj)\n> <:GitHub:1363357310369529997> [Quake's GitHub](<https://github.com/GamingDerp/Quake/tree/main>)"
+            e.description = f"> :link: [Add Quake](<https://discord.com/oauth2/authorize?client_id=1363337899046867036&permissions=1632493759575&integration_type=0&scope=bot>)\n> <:Discord:1363355151234105405> [Support Server](https://discord.gg/9kdJ9pNhdh)\n> <:GitHub:1363357310369529997> [Quake's GitHub](<https://github.com/GamingDerp/Quake/tree/main>)"
             e.set_footer(text="Thank you!")
             await ctx.send(embed=e)
         except Exception as e:
