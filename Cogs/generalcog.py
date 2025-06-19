@@ -26,7 +26,7 @@ fe.set_author(name="Quake Commands", icon_url=quake_logo)
 fe.set_thumbnail(url=quake_logo)
 fe.add_field(
     name="🎉 __Fun Commands__",
-    value=f"> `Coinflip`, `Ask`, `Reverse`, `Say`, `Lovetest`, `Cute`",
+    value=f"> `Uno`, `Coinflip`, `Ask`, `Reverse`, `Say`, `Lovetest`, `Cute`",
 )
 
 ae = discord.Embed(color=quake_color)
@@ -65,7 +65,7 @@ class Dropdown(discord.ui.Select):
     def __init__(self):
         options = [
             discord.SelectOption(label="General Commands", description="Help, Info, Setup, About, Vote +4 More", emoji="📌"),
-            discord.SelectOption(label="Fun Commands", description="Coinflip, Ask, Reverse, Say, Lovetest +1 More", emoji="🎉"),
+            discord.SelectOption(label="Fun Commands", description="Uno, Coinflip, Ask, Reverse, Say +2 More", emoji="🎉"),
             discord.SelectOption(label="Action Commands", description="Highfive, Poke, Pat, Hug, Kiss +7 More", emoji="🎯"),
             discord.SelectOption(label="Misc Commands", description="Whois, Snipe, Remind, Afk, CardShow +25 More", emoji="🧮"),
             discord.SelectOption(label="Staff Commands", description="Purge, Ban, Unban, Kick, Mute +14 More", emoji="🔰"),
@@ -176,7 +176,7 @@ class GeneralCog(commands.Cog):
             )
             e.add_field(
                 name="✯ Quake Info",
-                value=f"> **Commands:** [114]"
+                value=f"> **Commands:** [115]"
                       f"\n> **Servers:** {total_guilds}"
                       f"\n> **Users:** {total_members}"
                       f"\n> **Ping:** {round(self.bot.latency * 1000)}ms"
