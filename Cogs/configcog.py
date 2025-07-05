@@ -503,7 +503,7 @@ class ConfigCog(commands.Cog):
             e.set_thumbnail(url=ctx.guild.icon.url if ctx.guild.icon else quake_logo)
             e.description = (f"To set the 'staff' roles for **{ctx.guild.name}**, click the **'Start'** button down below! \n\n### ⚖️ Role Ranks \n> - **Admin** | "
                              f"*Has access to the 'config' commands, ex: `setstaff`, and all staff commands* \n> - **Moderator** | "
-                             f"*Has access to various staff commands, ex: `ban`, `gulag`* \n> - **Helper** | *Has access to smaller staff commands, ex: `kick`, `warn`* \n\n*Be careful who you give access!*")
+                             f"*Has access to various staff commands, ex: `ban`, `timeout`* \n> - **Helper** | *Has access to smaller staff commands, ex: `kick`, `warn`* \n\n*Be careful who you give access!*")
             view = discord.ui.View()
             view.add_item(discord.ui.Button(style=discord.ButtonStyle.success, label="✅ Start", custom_id="set_staff_start"))
             view.add_item(discord.ui.Button(style=discord.ButtonStyle.danger, label="❌ Cancel", custom_id="set_staff_cancel"))
