@@ -129,7 +129,7 @@ class LogCog(commands.Cog):
             logs = [log async for log in guild.audit_logs(limit=1, action=discord.AuditLogAction.ban)]
             logs = logs[0]
             e = discord.Embed(color=0xff0000)
-            e.set_author(name="<:BanHammer:1123773333947813898> Member Banned")
+            e.set_author(name="🛑 Member Banned")
             if member.avatar:
                 e.set_thumbnail(url=member.avatar.url)
             user_type = "**bot**" if member.bot else "**user**"
@@ -423,4 +423,5 @@ class LogCog(commands.Cog):
         await self.log_event(thread.guild, e)
 
 async def setup(bot):
+
     await bot.add_cog(LogCog(bot))
